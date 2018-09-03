@@ -1,0 +1,1149 @@
+<!doctype html>
+<html>
+
+<head></head>
+
+<body>
+    <div id='main'>
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4">MTNSA - Supply Chain</h1>
+                <h4></h4>
+                <p>This web application demonstrates a supply chain program on
+                    <b>blockchain</b> using
+                    <b>Hyperledger Composer API</b>
+                </p>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <p>
+                        
+                    <ul>
+                        <a class="button btn btn-learn btn-lg" href="/about" role="button"><span>Learn more </span></a>
+                            <a class="btn btn-primary btn-lg dropdown-toggle " href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <a class="dropdown-item" href="index.html#registrationManufacture" onclick="registrationManufacture();">Manufacture</a>
+                                    <a class="dropdown-item" href="index.html#registrationSupplier" onclick="registrationSupplier();">Supplier</a>
+                                    <a class="dropdown-item" href="index.html#registrationDistributor" onclick="registrationDistributor();">Distributor</a>
+                                    <a class="dropdown-item" href="index.html#registrationCourier" onclick="registrationCourier();">Courier</a>
+                                    <a class="dropdown-item" href="index.html#registrationRetailer" onclick="registrationRetailer();">Retailer</a>
+                            </div>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+<!--------------@Prince------------------>
+
+    <hr class="featurette-divider">
+    </div>
+    <div id='about'>
+        <div class="container">
+            <br/>
+            <br/>
+            <h1 class="display-4">About page</h1>
+            <h4>this confirms the about page has loaded from context.html</h4>
+        </div>
+    </div>
+<!--------------register manufacture-->
+    <div id='registrationManufacture'>
+            <div class="jumbotron">
+              <div class="container">
+                <h1>Manufacture Registration</h1>
+                <p id="registration-info" style="display:block;">Provide the company name and ID to register on the network</p>
+              </div>
+            </div>
+          
+          
+            <div class="container" id="registration" style="display:block;">
+              <div class="col-md-6 order-md-1">
+                <div class="mb-3">
+                  <label for="manufacture-id"><b>Manufacture ID </b><span class="text-muted"> (identification on the network)</span></label>
+                  <div class="input-group manufactre-id">
+                    <input type="text" class="form-control" id="manufacture-id" placeholder="" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                      ID is required.
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="mb-3">
+                  <label for="card-id"><b>Access Card ID </b><span class="text-muted"> (access id for your account)</span></label>
+                  <div class="input-group card-id">
+                    <input type="text" class="form-control" id="card-id" placeholder="" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                      ID is required.
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-8 mb-3 name">
+                    <label for="name"><b>Company Name</b></label>
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Please enter a valid name.
+                    </div>
+                  </div>
+          
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-8 mb-3 name">
+                    <label for="name"><b>Company Country</b></label>
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Please enter a valid Country name.
+                    </div>
+                  </div>
+          
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-8 mb-3 name">
+                    <label for="name"><b>Company Physical Address</b></label>
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Please enter a valid physical adddress.
+                    </div>
+                  </div>
+          
+                </div>
+          
+                <div class="row">
+                  <div class="col-md-8 mb-3 name">
+                    <label for="name"><b>Company Contact Details</b></label>
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Please enter a valid name.
+                    </div>
+                  </div>
+          
+                </div>
+          
+                <div>
+          
+                  <hr class="mb-4">
+                  <button class="btn btn-primary btn-lg btn-block register-manufacture" type="submit">Register</button>
+                </div>
+          
+              </div>
+              <hr class="featurette-divider">
+            </div>
+          
+            <div class="container text-center">
+              <div class="loader" id="loader" style="display:none;"></div>
+            </div>
+          
+            <div class="container text-center" id="successful-registration" style="display:none;">
+              <h4>successfully registered on the blockchain network</h4>
+              <div class="row" style="display:block;">
+                <br>
+                <div><a class="btn btn-primary" href="/manufacture" role="button">Manufacture Sign In &raquo;</a></div>
+                <br>
+                <div><a class="btn btn-primary" href="/home" role="button">Home &raquo;</a></div>
+              </div>
+              <hr class="featurette-divider">
+            </div>
+    </div>
+<!----------manufacture login--------->    
+ <div id='manufacture'>
+    <div class="jumbotron" id="loginSection" style="display:block;">
+        <div class="container">
+            <h2>Manufacture Sign In</h2>
+        <br>
+        <div class="maufacture-id">
+            <p> Enter Manufacture ID
+            <input>
+            </p>
+        </div>
+        <div class="card-id">
+            <p> Enter Access Card ID
+            <input>
+            </p>
+        </div>
+        <button class="btn btn-primary sign-in-manufacture">SIGN IN</button>
+        </div>
+    </div>
+
+
+    <div id="transactionSection" style="display:none;">
+                
+                
+        <div class="jumbotron" id="headSection" style="display:block;">
+          <div class="container">
+            <table>
+              <tr>
+                <td>
+                  <div style="padding-right: 20px">
+                    <h2>name:</h2>
+                    <h2>id:</h2>
+                  </div>
+                </td>
+                <td>
+                  <div class="heading"> </div>
+                </td>
+              </tr>
+            </table>
+            <!--div class="heading"> </div-->
+          </div>
+        </div>
+
+      </div>
+        <div class="container">
+    
+          <div class="row">
+    
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item tab-width">
+                <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="earn" aria-selected="true">Dashboard</a>
+              </li>
+              <li class="nav-item tab-width">
+                <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transactions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="tab-content" id="myTabContent">
+              <!--<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                <br>
+                <h3>Points Usage</h3>
+                <div class="dashboards"></div>
+              </div>-->
+    
+              <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                <br>
+                <p>View transactions by transaction type </p>
+                <br>
+                <ul class="nav nav-tabs" id="transactionsTypeTab" role="tablist">
+                  <li class="nav-item ">
+                    <a class="nav-link active" id="points-allocated-tab" data-toggle="tab" href="#points-allocated" role="tab" aria-controls="points-allocated" aria-selected="true">Lists of Product ID's / Serial# </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" id="points-redeemed-tab" data-toggle="tab" href="#points-redeemed" role="tab" aria-controls="points-redeemed" aria-selected="false">Points Redeemed</a>
+                  </li>
+                </ul>
+    
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="points-allocated" role="tabpanel" aria-labelledby="points-allocated-tab">
+                    <br>
+                    <h4>Lists of Product ID/ Serial# at Distributor</h4>
+                    <br>
+                    <div class="product/serial#-allocated-transactions"> </div>
+                    <br><br>
+                  </div>
+    
+                  <div class="tab-pane fade " id="points-redeemed" role="tabpanel" aria-labelledby="points-redeemed-tab">
+                    <br>
+                    <h4>Product ID/ Serial# distributered to couriers</h4>
+                    <br>
+                    <div class="points-redeemed-transactions"> </div>
+                    <br><br>
+                  </div>
+    
+                </div>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div class="container text-center">
+            <div class="loader" id="loader" style="display:none;"></div>
+          </div>
+    
+        </div>
+</div> 
+<!------------------suppliers registration----------------->
+    <div id='registrationSupplier'>    
+          <div class="jumbotron">
+              <div class="container">
+                  <h1>Supplier Registration</h1>
+                    <p id="registration-info" style="display:block;">Provide the company name and ID to register on the network</p>
+              </div>
+          </div>
+                
+                
+                  <div class="container" id="registration" style="display:block;">
+                    <div class="col-md-6 order-md-1">
+                      <div class="mb-3">
+                        <label for="supplier-id"><b>Supplier ID </b><span class="text-muted"> (identification on the network)</span></label>
+                        <div class="input-group supplier-id">
+                          <input type="text" class="form-control" id="supplier-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="mb-3">
+                        <label for="card-id"><b>Access Card ID </b><span class="text-muted"> (access id for your account)</span></label>
+                        <div class="input-group card-id">
+                          <input type="text" class="form-control" id="card-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Company Name</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Company Country</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid Country name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Company Physical Address</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid physical adddress.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Company Contact Details</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div>
+                
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block register-manufacture" type="submit">Register</button>
+                      </div>
+                
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+                
+                  <div class="container text-center">
+                    <div class="loader" id="loader" style="display:none;"></div>
+                  </div>
+                
+                  <div class="container text-center" id="successful-registration" style="display:none;">
+                    <h4>successfully registered on the blockchain network</h4>
+                    <div class="row" style="display:block;">
+                      <br>
+                      <div><a class="btn btn-primary" href="/supplier" role="button">Supplier Sign In &raquo;</a></div>
+                      <br>
+                      <div><a class="btn btn-primary" href="/home" role="button">Home &raquo;</a></div>
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+  </div>
+<!-----------------supplier login-------------------->
+  <div id='supplier'>    
+        <div class="jumbotron" id="loginSection" style="display:block;">
+            <div class="container">
+                <h2>Supplier Sign In</h2>
+                <br>
+                <div class="supplier-id">
+                    <p> Enter Supplier ID
+                        <input>
+                    </p>
+                </div>
+                    <div class="card-id">
+                      <p> Enter Access Card ID
+                        <input>
+                      </p>
+                    </div>
+                  <button class="btn btn-primary sign-in-supplier">SIGN IN</button>
+              </div>
+        </div>
+                
+                
+        <div id="transactionSection" style="display:none;">
+                
+                
+            <div class="jumbotron" id="headSection" style="display:block;">
+              <div class="container">
+                <table>
+                  <tr>
+                    <td>
+                      <div style="padding-right: 20px">
+                        <h2>name:</h2>
+                        <h2>id:</h2>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="heading"> </div>
+                    </td>
+                  </tr>
+                </table>
+                <!--div class="heading"> </div-->
+              </div>
+            </div>
+
+          </div>
+            <div class="container">
+        
+              <div class="row">
+        
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item tab-width">
+                    <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="earn" aria-selected="true">Dashboard</a>
+                  </li>
+                  <li class="nav-item tab-width">
+                    <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transactions</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="row">
+                <div class="tab-content" id="myTabContent">
+                  <!--<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <br>
+                    <h3>Points Usage</h3>
+                    <div class="dashboards"></div>
+                  </div>-->
+        
+                  <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                    <br>
+                    <p>View transactions by transaction type </p>
+                    <br>
+                    <ul class="nav nav-tabs" id="transactionsTypeTab" role="tablist">
+                      <li class="nav-item ">
+                        <a class="nav-link active" id="points-allocated-tab" data-toggle="tab" href="#points-allocated" role="tab" aria-controls="points-allocated" aria-selected="true">Lists of Product ID's / Serial# </a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" id="points-redeemed-tab" data-toggle="tab" href="#points-redeemed" role="tab" aria-controls="points-redeemed" aria-selected="false">Points Redeemed</a>
+                      </li>
+                    </ul>
+        
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="points-allocated" role="tabpanel" aria-labelledby="points-allocated-tab">
+                        <br>
+                        <h4>Lists of Product ID/ Serial# at Supplier</h4>
+                        <br>
+                        <div class="product/serial#-allocated-transactions"> </div>
+                        <br><br>
+                      </div>
+        
+                      <div class="tab-pane fade " id="points-redeemed" role="tabpanel" aria-labelledby="points-redeemed-tab">
+                        <br>
+                        <h4>Product ID/ Serial# supplied to Distributors</h4>
+                        <br>
+                        <div class="products/serial#-supplied-transactions"> </div>
+                        <br><br>
+                      </div>
+        
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+        
+              <div class="container text-center">
+                <div class="loader" id="loader" style="display:none;"></div>
+              </div>
+        
+            </div>     
+    </div>
+<!-----------------distributor registration---------------->
+    <div id='registrationDistributor'>
+            <div class="jumbotron">
+                    <div class="container">
+                      <h1>Distributor Registration</h1>
+                      <p id="registration-info" style="display:block;">Provide the company name and ID to register on the network</p>
+                    </div>
+                  </div>
+                
+                
+                  <div class="container" id="registration" style="display:block;">
+                    <div class="col-md-6 order-md-1">
+                      <div class="mb-3">
+                        <label for="manufacture-id"><b>Distributor ID </b><span class="text-muted"> (identification on the network)</span></label>
+                        <div class="input-group manufactre-id">
+                          <input type="text" class="form-control" id="manufacture-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="mb-3">
+                        <label for="card-id"><b>Access Card ID </b><span class="text-muted"> (access id for your account)</span></label>
+                        <div class="input-group card-id">
+                          <input type="text" class="form-control" id="card-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Distributor Name</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Distributor Country</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid Country name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Distributor Physical Address</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid physical adddress.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Distributor Contact Details</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div>
+                
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block register-distributor" type="submit">Register</button>
+                      </div>
+                
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+                
+                  <div class="container text-center">
+                    <div class="loader" id="loader" style="display:none;"></div>
+                  </div>
+                
+                  <div class="container text-center" id="successful-registration" style="display:none;">
+                    <h4>successfully registered on the blockchain network</h4>
+                    <div class="row" style="display:block;">
+                      <br>
+                      <div><a class="btn btn-primary" href="/distributor" role="button">Distributor Sign In &raquo;</a></div>
+                      <br>
+                      <div><a class="btn btn-primary" href="/home" role="button">Home &raquo;</a></div>
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+    </div>        
+<!---------------- distributor login---------------------->
+    <div id='distributor'>
+            <div class="jumbotron" id="loginSection" style="display:block;">
+                    <div class="container">
+                      <h2>Distributor Sign In</h2>
+                      <br>
+                      <div class="maufacture-id">
+                        <p> Enter Distributor ID
+                          <input>
+                        </p>
+                      </div>
+                      <div class="card-id">
+                        <p> Enter Access Card ID
+                          <input>
+                        </p>
+                      </div>
+                      <button class="btn btn-primary sign-in-manufacture">SIGN IN</button>
+                    </div>
+                  </div>
+                
+                
+                  <div id="transactionSection" style="display:none;">
+                
+                
+                    <div class="jumbotron" id="headSection" style="display:block;">
+                      <div class="container">
+                        <table>
+                          <tr>
+                            <td>
+                              <div style="padding-right: 20px">
+                                <h2>name:</h2>
+                                <h2>id:</h2>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="heading"> </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!--div class="heading"> </div-->
+                      </div>
+                    </div>
+
+                  </div>
+                    <div class="container">
+                
+                      <div class="row">
+                
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item tab-width">
+                            <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="earn" aria-selected="true">Dashboard</a>
+                          </li>
+                          <li class="nav-item tab-width">
+                            <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transactions</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="row">
+                        <div class="tab-content" id="myTabContent">
+                          <!--<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                            <br>
+                            <h3>Points Usage</h3>
+                            <div class="dashboards"></div>
+                          </div>-->
+                
+                          <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                            <br>
+                            <p>View transactions by transaction type </p>
+                            <br>
+                            <ul class="nav nav-tabs" id="transactionsTypeTab" role="tablist">
+                              <li class="nav-item ">
+                                <a class="nav-link active" id="points-allocated-tab" data-toggle="tab" href="#points-allocated" role="tab" aria-controls="points-allocated" aria-selected="true">Lists of Product ID's / Serial# </a>
+                              </li>
+                              <li class="nav-item ">
+                                <a class="nav-link" id="points-redeemed-tab" data-toggle="tab" href="#points-redeemed" role="tab" aria-controls="points-redeemed" aria-selected="false">Points Redeemed</a>
+                              </li>
+                            </ul>
+                
+                            <div class="tab-content" id="myTabContent">
+                              <div class="tab-pane fade show active" id="points-allocated" role="tabpanel" aria-labelledby="points-allocated-tab">
+                                <br>
+                                <h4>Lists of Product ID/ Serial# at Distributor</h4>
+                                <br>
+                                <div class="product/serial#-allocated-transactions"> </div>
+                                <br><br>
+                              </div>
+                
+                              <div class="tab-pane fade " id="points-redeemed" role="tabpanel" aria-labelledby="points-redeemed-tab">
+                                <br>
+                                <h4>Product ID/ Serial# distributered to couriers</h4>
+                                <br>
+                                <div class="points-redeemed-transactions"> </div>
+                                <br><br>
+                              </div>
+                
+                            </div>
+                          </div>
+                
+                        </div>
+                      </div>
+                
+                      <div class="container text-center">
+                        <div class="loader" id="loader" style="display:none;"></div>
+                      </div>
+                
+                    </div>
+    </div>
+
+<!-----------------couriers registration----------------->
+    <div id='registrationCourier'>
+            <div class="jumbotron">
+                    <div class="container">
+                      <h1>Courier Registration</h1>
+                      <p id="registration-info" style="display:block;">Provide the company name and ID to register on the network</p>
+                    </div>
+                  </div>
+                
+                
+                  <div class="container" id="registration" style="display:block;">
+                    <div class="col-md-6 order-md-1">
+                      <div class="mb-3">
+                        <label for="courier-id"><b>Courier ID </b><span class="text-muted"> (identification on the network)</span></label>
+                        <div class="input-group manufactre-id">
+                          <input type="text" class="form-control" id="manufacture-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="mb-3">
+                        <label for="card-id"><b>Access Card ID </b><span class="text-muted"> (access id for your account)</span></label>
+                        <div class="input-group card-id">
+                          <input type="text" class="form-control" id="card-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Courier Name</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Courier Country</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid Country name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Courier Physical Address</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid physical adddress.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Courier Contact Details</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+
+                      <div class="row">
+                            <div class="col-md-8 mb-3 name">
+                              <label for="name"><b>Vehicle Registration</b></label>
+                              <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                              <div class="invalid-feedback">
+                                Please enter a valid name.
+                              </div>
+                            </div>
+                    
+                        </div>
+                  
+                        <div class="row">
+                            <div class="col-md-8 mb-3 name">
+                              <label for="name"><b>Driver Name</b></label>
+                              <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                              <div class="invalid-feedback">
+                                Please enter a valid name.
+                              </div>
+                            </div>
+                    
+                          </div>
+                  
+                          <div class="row">
+                              <div class="col-md-8 mb-3 name">
+                                <label for="name"><b>Driver Surname</b></label>
+                                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                  Please enter a valid name.
+                                </div>
+                              </div>
+                      
+                            </div>
+                
+                      <div>
+                
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block register-courier" type="submit">Register</button>
+                      </div>
+                
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+                
+                  <div class="container text-center">
+                    <div class="loader" id="loader" style="display:none;"></div>
+                  </div>
+                
+                  <div class="container text-center" id="successful-registration" style="display:none;">
+                    <h4>successfully registered on the blockchain network</h4>
+                    <div class="row" style="display:block;">
+                      <br>
+                      <div><a class="btn btn-primary" href="/courier" role="button">Courier Sign In &raquo;</a></div>
+                      <br>
+                      <div><a class="btn btn-primary" href="/home" role="button">Home &raquo;</a></div>
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+    </div>
+<!-------------------courier login----------------------->
+    <div id='courier'>
+            <div class="jumbotron" id="loginSection" style="display:block;">
+                    <div class="container">
+                      <h2>Courier Sign In</h2>
+                      <br>
+                      <div class="courier-id">
+                        <p> Enter Courier ID
+                          <input>
+                        </p>
+                      </div>
+                      <div class="card-id">
+                        <p> Enter Access Card ID
+                          <input>
+                        </p>
+                      </div>
+                      <button class="btn btn-primary sign-in-courier">SIGN IN</button>
+                    </div>
+            </div>
+                
+                
+            <div id="transactionSection" style="display:none;">
+                
+                
+                <div class="jumbotron" id="headSection" style="display:block;">
+                  <div class="container">
+                    <table>
+                      <tr>
+                        <td>
+                          <div style="padding-right: 20px">
+                            <h2>name:</h2>
+                            <h2>id:</h2>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="heading"> </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!--div class="heading"> </div-->
+                  </div>
+                </div>
+
+              </div>
+                <div class="container">
+            
+                  <div class="row">
+            
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item tab-width">
+                        <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="earn" aria-selected="true">Dashboard</a>
+                      </li>
+                      <li class="nav-item tab-width">
+                        <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transactions</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <div class="tab-content" id="myTabContent">
+                      <!--<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                        <br>
+                        <h3>Points Usage</h3>
+                        <div class="dashboards"></div>
+                      </div>-->
+            
+                      <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                        <br>
+                        <p>View transactions by transaction type </p>
+                        <br>
+                        <ul class="nav nav-tabs" id="transactionsTypeTab" role="tablist">
+                          <li class="nav-item ">
+                            <a class="nav-link active" id="points-allocated-tab" data-toggle="tab" href="#points-allocated" role="tab" aria-controls="points-allocated" aria-selected="true">Lists of Product ID's / Serial# </a>
+                          </li>
+                          <li class="nav-item ">
+                            <a class="nav-link" id="points-redeemed-tab" data-toggle="tab" href="#points-redeemed" role="tab" aria-controls="points-redeemed" aria-selected="false">Points Redeemed</a>
+                          </li>
+                        </ul>
+            
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="points-allocated" role="tabpanel" aria-labelledby="points-allocated-tab">
+                            <br>
+                            <h4>Lists of Product ID/ Serial# transported by Courier</h4>
+                            <br>
+                            <div class="product/serial#-allocated-transactions"> </div>
+                            <br><br>
+                          </div>
+            
+                          <div class="tab-pane fade " id="points-redeemed" role="tabpanel" aria-labelledby="points-redeemed-tab">
+                            <br>
+                            <h4>Product ID/ Serial# delivered to Retailer</h4>
+                            <br>
+                            <div class="points-redeemed-transactions"> </div>
+                            <br><br>
+                          </div>
+            
+                        </div>
+                      </div>
+            
+                    </div>
+                  </div>
+            
+                  <div class="container text-center">
+                    <div class="loader" id="loader" style="display:none;"></div>
+                  </div>
+            
+                </div>
+    </div>
+<!------------------retailer registration---------------->
+    <div id='registrationRetailer'>
+            <div class="jumbotron">
+                    <div class="container">
+                      <h1>Retailer Registration</h1>
+                      <p id="registration-info" style="display:block;">Provide the company name and ID to register on the network</p>
+                    </div>
+                  </div>
+                
+                
+                  <div class="container" id="registration" style="display:block;">
+                    <div class="col-md-6 order-md-1">
+                      <div class="mb-3">
+                        <label for="retailer-id"><b>Retailer ID </b><span class="text-muted"> (identification on the network)</span></label>
+                        <div class="input-group retailer-id">
+                          <input type="text" class="form-control" id="retailer-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="mb-3">
+                        <label for="card-id"><b>Access Card ID </b><span class="text-muted"> (access id for your account)</span></label>
+                        <div class="input-group card-id">
+                          <input type="text" class="form-control" id="card-id" placeholder="" required>
+                          <div class="invalid-feedback" style="width: 100%;">
+                            ID is required.
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Retailer Name</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Retailer Country</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid Country name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Retailer Physical Address</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid physical adddress.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div class="row">
+                        <div class="col-md-8 mb-3 name">
+                          <label for="name"><b>Retailer Contact Details</b></label>
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid name.
+                          </div>
+                        </div>
+                
+                      </div>
+                
+                      <div>
+                
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block register-retailer" type="submit">Register</button>
+                      </div>
+                
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+                
+                  <div class="container text-center">
+                    <div class="loader" id="loader" style="display:none;"></div>
+                  </div>
+                
+                  <div class="container text-center" id="successful-registration" style="display:none;">
+                    <h4>successfully registered on the blockchain network</h4>
+                    <div class="row" style="display:block;">
+                      <br>
+                      <div><a class="btn btn-primary" href="/retailer" role="button">Retailer Sign In &raquo;</a></div>
+                      <br>
+                      <div><a class="btn btn-primary" href="/home" role="button">Home &raquo;</a></div>
+                    </div>
+                    <hr class="featurette-divider">
+                  </div>
+    </div>
+<!--------------------retailer login--------------------->
+    <div id='retailer'>
+            <div class="jumbotron" id="loginSection" style="display:block;">
+                    <div class="retailer">
+                      <h2>Retailer Sign In</h2>
+                      <br>
+                      <div class="retailer-id">
+                        <p> Enter Retailer ID
+                          <input>
+                        </p>
+                      </div>
+                      <div class="card-id">
+                        <p> Enter Access Card ID
+                          <input>
+                        </p>
+                      </div>
+                      <button class="btn btn-primary sign-in-retailer">SIGN IN</button>
+                    </div>
+              </div>
+                
+                
+              <div id="transactionSection" style="display:none;">
+                
+                
+                  <div class="jumbotron" id="headSection" style="display:block;">
+                    <div class="container">
+                      <table>
+                        <tr>
+                          <td>
+                            <div style="padding-right: 20px">
+                              <h2>name:</h2>
+                              <h2>id:</h2>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="heading"> </div>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--div class="heading"> </div-->
+                    </div>
+                  </div>
+  
+                </div>
+                  <div class="container">
+              
+                    <div class="row">
+              
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item tab-width">
+                          <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="earn" aria-selected="true">Dashboard</a>
+                        </li>
+                        <li class="nav-item tab-width">
+                          <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transactions</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <div class="tab-content" id="myTabContent">
+                        <!--<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                          <br>
+                          <h3>Points Usage</h3>
+                          <div class="dashboards"></div>
+                        </div>-->
+              
+                        <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                          <br>
+                          <p>View transactions by transaction type </p>
+                          <br>
+                          <ul class="nav nav-tabs" id="transactionsTypeTab" role="tablist">
+                            <li class="nav-item ">
+                              <a class="nav-link active" id="points-allocated-tab" data-toggle="tab" href="#points-allocated" role="tab" aria-controls="points-allocated" aria-selected="true">Lists of Product ID's / Serial# </a>
+                            </li>
+                            <li class="nav-item ">
+                              <a class="nav-link" id="points-redeemed-tab" data-toggle="tab" href="#points-redeemed" role="tab" aria-controls="points-redeemed" aria-selected="false">Points Redeemed</a>
+                            </li>
+                          </ul>
+              
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="points-allocated" role="tabpanel" aria-labelledby="points-allocated-tab">
+                              <br>
+                              <h4>Lists of Product ID/ Serial# at Retailers</h4>
+                              <br>
+                              <div class="product/serial#-allocated-transactions"> </div>
+                              <br><br>
+                            </div>
+              
+                            <div class="tab-pane fade " id="points-redeemed" role="tabpanel" aria-labelledby="points-redeemed-tab">
+                              <br>
+                              <h4>Product ID/ Serial# sold to Customers</h4>
+                              <br>
+                              <div class="products-sold-transactions"> </div>
+                              <br><br>
+                            </div>
+              
+                          </div>
+                        </div>
+              
+                      </div>
+                    </div>
+              
+                    <div class="container text-center">
+                      <div class="loader" id="loader" style="display:none;"></div>
+                    </div>
+              
+                  </div>
+    </div>
+<!-------------------customer registration--------------->
+    <div id='registrationCustomer'>
+
+    </div>
+<!---------------------customer login-------------------->
+    <div id='customer'>
+
+    </div>
+<!-------------------network admin registration---------->
+    <div id='registrationNetworkAdmin'>
+
+    </div>
+<!-------------------networkAdim------------------------->
+    <div id='networkAdmin'>
+
+    </div>
+<!-------------------employee registration--------------->
+    <div id='registrationEmployee'>
+
+    </div>
+<!-----------------------employee------------------------>
+    <div id='employee'>
+
+    </div>
+</body>
+
+</html>
